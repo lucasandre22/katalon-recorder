@@ -7,29 +7,29 @@ $(document).ready(function(){
       var command = commands[i];
       var action = command.command;
       var target = command.target;
-      var value = command.value
-      var yamlEntry = ""
+      var value = command.value;
+      var yamlEntry = "";
 
       var id = "", nameYaml = "", tagName = "", xpath = "";
       var uniqueId = "id" + i; //default value
 
       if (target.includes("id=")) {
-        id = target.substring(3, target.length - 1);
+        id = target.substring(3, target.length);
       } else if (target.includes("xpath=")) {
-        xpath = target.substring(6, target.length - 1);
+        xpath = target.substring(6, target.length);
       } else if (target.includes("link=")) {
-        nameYaml = target.substring(5, target.length - 1);
+        nameYaml = target.substring(5, target.length);
       } else if (target.includes("http://")) {
-        link = target.substring(8, target.length - 1);
+        link = target.substring(8, target.length);
       } else if (target.includes("https://")) {
-        link = target.substring(9, target.length - 1);
+        link = target.substring(9, target.length);
       }
 
-      yamlEntry += uniqueId + '\n';
-      yamlEntry += TAB + "order: " + i + '\n'
-      yamlEntry += TAB + "uniqueId: " + uniqueId + '\n'
-      yamlEntry += TAB + "action: " + action + '\n'
-      yamlEntry += TAB + "id: " + id + '\n'
+      yamlEntry += uniqueId + ": " + '\n';
+      yamlEntry += TAB + "order: " + i + '\n';
+      yamlEntry += TAB + "uniqueId: " + uniqueId + '\n';
+      yamlEntry += TAB + "action: " + action + '\n';
+      yamlEntry += TAB + "id: " + id + '\n';
       yamlEntry += TAB + "windowsUIAutomation: " + windowsUIAutomation + '\n';
       yamlEntry += TAB + "name: " + nameYaml + '\n';
       yamlEntry += TAB + "className: " + className + '\n';
@@ -38,7 +38,7 @@ $(document).ready(function(){
       yamlEntry += TAB + "xpath: " + xpath + '\n';
       yamlEntry += TAB + "link: " + link + '\n';
 
-      content += yamlEntry + '\n';
+      content += yamlEntry;
     }
     return {
       content: content,
