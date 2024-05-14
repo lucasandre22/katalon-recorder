@@ -52,7 +52,7 @@ $(document).ready(function(){
         var content = header.join('\n') + "\n" + commands_.join('\n') + "\n" + footer.join('\n');
         return {
             content: content,
-            extension: 'yaml',
+            extension: 'groovy',
             mimetype: 'text/plain'
         }
     }
